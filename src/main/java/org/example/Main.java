@@ -4,8 +4,8 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-            String fator1 = "11110";
-            String fator2 = "11100";
+            String fator1 = "11100";
+            String fator2 = "11110";
             String fator3 = "1111000";
 
 
@@ -29,15 +29,14 @@ public class Main {
         String n2 = karatsuba(somaBinaria(a1,a2), somaBinaria(b1,b2));
         String n3 = karatsuba(a2, b2);
 
-
         return somaKaratsuba(n1, n2, n3);
     }
     //TODO: Realiza a seguinte operação em binario: (n1 << + (n2 - n1 - n3) < + n3
     private static String somaKaratsuba(String n1, String n2, String n3) {
         n2 = subtraBinaria(n2, somaBinaria(n1, n3));
-        n1 = n1 + "00";
-        n2 = n2 + "0";
-
+        n1 = somaBinaria(n1 + "0", n1 + "000");
+        n1 = somaBinaria(n1 + "0", n1 + "000");
+        n2 = somaBinaria(n2 + "0", n2 + "000");
         return somaBinaria(n1, somaBinaria(n2, n3));
     }
 
